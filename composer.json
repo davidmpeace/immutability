@@ -1,0 +1,26 @@
+{
+    "name": "davidmpeace/immutability",
+    "description": "A simple Laravel package that allows you to enforce immutable attributes on Eloquent models.",
+    "keywords": ["laravel","eloquent","immutable","attributes","orm","automatic"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Peace",
+            "email": "peaceman@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.*|5.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9",
+        "phpunit/phpunit": "~4.0",
+        "illuminate/database": "4.*|5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eloquent\\Attributes\\": "src/"
+        }
+    }
+}
