@@ -33,7 +33,7 @@ class MyAppSuperModel extends Model
 
 Class override.
 
-```
+```php
 <?php
 namespace App;
 
@@ -45,7 +45,7 @@ class User extends MyAppSuperModel
 
 Catching exceptions
 
-```
+```php
 $user = User::find(1);
 
 try {
