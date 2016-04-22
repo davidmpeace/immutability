@@ -46,14 +46,20 @@ class User extends MyAppSuperModel
 Catching exceptions
 
 ```php
+<?php
+namespace App;
+
+use Eloquent\Attributes\Exceptions\ImmutableFieldViolationException;
+use Exception;
+
 $user = User::find(1);
 
 try {
     $user->username = "myNewUserName";
     $user->save();
-} catch ( \Eloquent\Attributes\Exceptions\ImmutableFieldViolationException $e ) {
+} catch ( ImmutableFieldViolationException $e ) {
    // Handle immutable attribute violation error
-} catch ( \Exception $e ) {
+} catch ( Exception $e ) {
    // Handle error
 }
 ```
