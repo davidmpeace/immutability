@@ -27,8 +27,33 @@ class MyAppSuperModel extends Model
 {
     use Immutability;
 
-    protected $immutable = ['id', 'uuid', 'code'];
+    protected $immutable = ['id', 'uuid'];
 }
 ```
 
-That's it!
+Class override.
+
+```
+<?php
+namespace App;
+
+class User extends MyAppSuperModel
+{
+    protected $immutable = ['id', 'uuid', 'username'];
+}
+```
+
+Catching exceptions
+
+```
+$user = User::find(1);
+
+try {
+    $user->username = "myNewUserName";
+    $user->save();
+} catch ( \Eloquent\Attributes\Exceptions\ImmutableFieldViolationException $e ) {
+   // Handle immutable attribute violation error
+} catch ( \Exception $e ) {
+   // Handle error
+}
+```
